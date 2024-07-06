@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,7 @@
 		46D7D5FB2BFFFAD800C64880 /* SharePlayTutorialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D7D5FA2BFFFAD800C64880 /* SharePlayTutorialTests.swift */; };
 		46D7D6052BFFFB5400C64880 /* GroupActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D7D6042BFFFB5400C64880 /* GroupActivity.swift */; };
 		46D7D6072BFFFBEB00C64880 /* SharePlayMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D7D6062BFFFBEB00C64880 /* SharePlayMessage.swift */; };
+		46EF36DC2C389C98002A15C2 /* SharePlayMock in Frameworks */ = {isa = PBXBuildFile; productRef = 46EF36DB2C389C98002A15C2 /* SharePlayMock */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46EF36DC2C389C98002A15C2 /* SharePlayMock in Frameworks */,
 				46D7D5E72BFFFAD700C64880 /* RealityKitContent in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,6 +139,7 @@
 			name = SharePlayTutorial;
 			packageProductDependencies = (
 				46D7D5E62BFFFAD700C64880 /* RealityKitContent */,
+				46EF36DB2C389C98002A15C2 /* SharePlayMock */,
 			);
 			productName = SharePlayTutorial;
 			productReference = 46D7D5E12BFFFAD700C64880 /* SharePlayTutorial.app */;
@@ -188,6 +191,9 @@
 				Base,
 			);
 			mainGroup = 46D7D5D82BFFFAD700C64880;
+			packageReferences = (
+				46EF36DA2C389C98002A15C2 /* XCLocalSwiftPackageReference "../../pixeland/SharePlayMock" */,
+			);
 			productRefGroup = 46D7D5E22BFFFAD700C64880 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -495,10 +501,21 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCLocalSwiftPackageReference section */
+		46EF36DA2C389C98002A15C2 /* XCLocalSwiftPackageReference "../../pixeland/SharePlayMock" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../../pixeland/SharePlayMock;
+		};
+/* End XCLocalSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		46D7D5E62BFFFAD700C64880 /* RealityKitContent */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = RealityKitContent;
+		};
+		46EF36DB2C389C98002A15C2 /* SharePlayMock */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SharePlayMock;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

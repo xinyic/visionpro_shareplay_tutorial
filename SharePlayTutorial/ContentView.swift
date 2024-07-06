@@ -11,6 +11,7 @@ import RealityKitContent
 import GroupActivities
 import Combine
 import LinkPresentation
+import SharePlayMock
 
 struct ContentView: View {
 
@@ -53,8 +54,8 @@ class ContentViewModel: ObservableObject {
     @Published var sharePlayEnabled = false
     var tasks = Set<Task<Void, Never>>()
     var subscriptions: Set<AnyCancellable> = []
-    var sharePlayMessenger: GroupSessionMessenger?
-    var sharePlaySession: GroupSession<PlayTogetherGroupActivity>?
+    var sharePlayMessenger: GroupSessionMessengerMock?
+    var sharePlaySession: GroupSessionMock<PlayTogetherGroupActivity>?
     
     func toggleEnlarge() {
         enlarged.toggle()
@@ -107,7 +108,7 @@ class ContentViewModel: ObservableObject {
         Task {
             for await session in PlayTogetherGroupActivity.sessions() {
                 self.sharePlaySession = session
-                let messenger = GroupSessionMessenger(session: session)
+                let messenger = GroupSessionMessengerMock(session: session)
                 self.sharePlayMessenger = messenger
                 
                 self.tasks.insert(
@@ -180,7 +181,7 @@ class ContentViewModel: ObservableObject {
     
     func registerGroupActivity() {
         let itemProvider = NSItemProvider()
-        itemProvider.registerGroupActivity(PlayTogetherGroupActivity())
+        itemProvider.registerGroupActivity(PlayTogetherGroupActivity().groupActivity)
         let configuration = UIActivityItemsConfiguration(itemProviders: [itemProvider])
         configuration.metadataProvider = { key in
             guard key == .linkPresentationMetadata else { return Void.self }
