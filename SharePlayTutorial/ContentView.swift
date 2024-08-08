@@ -185,9 +185,7 @@ class ContentViewModel: ObservableObject {
         let configuration = UIActivityItemsConfiguration(itemProviders: [itemProvider])
         configuration.metadataProvider = { key in
             guard key == .linkPresentationMetadata else { return Void.self }
-            let metadata = LPLinkMetadata()
-            metadata.title = "SharePlay Tutorial"
-            metadata.imageProvider = NSItemProvider(object: UIImage(resource: .birdicon))
+            let metadata = PlayTogetherGroupActivity().groupActivity.metadata
             return metadata
         }
         UIApplication.shared
